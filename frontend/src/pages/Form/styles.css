@@ -56,3 +56,14 @@
     align-items: center;
     justify-content: center;
 }
+
+.dsmovie-btn f1{
+    background-color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
