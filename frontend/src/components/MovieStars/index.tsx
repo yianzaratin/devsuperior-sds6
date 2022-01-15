@@ -61,4 +61,5 @@ function MovieStars({ score }: Props) {
   );
 }
 
+
 export default MovieStars;

@@ -1,4 +1,4 @@
-import axios, {AxiosRequestConfig} from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Movie } from 'types/movie';
@@ -8,10 +8,10 @@ import './styles.css';
 
 
 type Props = {
-    movieId : string;
+    movieId: string;
 }
 
-function FormCard( { movieId } : Props) {
+function FormCard({ movieId }: Props) {
 
     const navigate = useNavigate();
 
@@ -19,19 +19,19 @@ function FormCard( { movieId } : Props) {
 
     useEffect(() => {
         axios.get(`${BASE_URL}/movies/${movieId}`)
-            .then(response =>{
+            .then(response => {
                 setMovie(response.data);
             })
     })
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) =>{
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
 
         const email = (event.target as any).email.value;
         const score = (event.target as any).score.value;
 
-        if (!validateEmail(email)){
+        if (!validateEmail(email)) {
             return;
         }
 
@@ -78,7 +78,7 @@ function FormCard( { movieId } : Props) {
                     </div>
                 </form >
                 <Link to="/">
-                <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+                    <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
                 </Link>
             </div >
         </div >
