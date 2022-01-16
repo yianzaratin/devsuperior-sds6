@@ -21,10 +21,10 @@ function FormCard({ movieId }: Props) {
         axios.get(`${BASE_URL}/movies/${movieId}`)
             .then(response => {
                 setMovie(response.data);
-            })
-    })
+            });
+    }, [movieId]);
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 
         event.preventDefault();
 
@@ -44,12 +44,12 @@ function FormCard({ movieId }: Props) {
                 movieId: movieId,
                 score: score
             }
-        }
+        };
 
         axios(config).then(response => {
-            console.log(response.data);
+         //   console.log(response.data);
             navigate("/");
-        })
+        });
 
     }
 
